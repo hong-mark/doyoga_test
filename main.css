@@ -12,6 +12,23 @@
     /* opacity: 1; */
 }
 
+.topRight{
+    right: 6.6%;
+    position: absolute;
+}
+
+.mobileMenuBtn{
+    visibility: hidden;
+}
+
+.mainContent{
+    left: 180px;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
 .mainContentStyle{
     /* Layout Properties */
     /* top: 80px; */
@@ -93,6 +110,10 @@
     color: white;
 }
 
+.resumeBtn:active{
+    color: #707070;
+}
+
 .shareParent{
     right: 16px;
     position: absolute;
@@ -155,14 +176,17 @@
     color: #C0A4A5;
     margin: 0 auto;
 }
+.gpmlist{
+    height: 420px;
+    gap: 30px;
+}
 
 .pageContainer{
-    width: 350px;
     position: relative;
 }
 
 .pageContainer img{
-    width: 100%;
+    width: 350px;
     height: 420px;
     border-radius: 16px;
     object-fit: cover;
@@ -173,6 +197,23 @@
 }
 .pageContainer p{
     color: white;font-size: 16px; margin: 0 auto;
+}
+
+.contentThreeLeftImag{
+    height: 628px;
+    border-radius: 16px;
+}
+
+.content3{
+    background-color: #F5F0E7;
+    padding: 64px 85px 64px 85px;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.content3 .right{
+    flex-direction: column ;
+    height: 628px;
 }
 
 .teacherResume{
@@ -239,6 +280,12 @@
     height: 94px;
 }
 
+.content4{
+    flex-direction: row-reverse;
+    height: 572px;
+    gap: 30px;
+}
+
 .grid-container{
     display: grid;
     grid-template-columns: auto auto;
@@ -249,6 +296,65 @@
 .grid-item1{
     grid-row-start: 1;
     grid-row-end: 3;
+    width: 350px;
+    height: 444px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+
+.grid-item2{
+    width: 160px;
+    height: 207px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.content5{
+    flex-direction: row;
+    height: 573px;
+    background-color: #F5F0E7;
+    gap: 30px;
+}
+
+.content5 .area1{
+    flex-direction: column;
+    width: 50%;
+}
+
+.content5 .area1 .content{
+    width: 445px;
+    float: right;
+}
+
+.content5 .area2{
+    height: 445px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    overflow: auto;
+    column-gap: 30px;
+}
+
+.content5 .area2 img{
+    width: 445px;
+    height: 445px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.content6{
+    height: 709px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content6 .area{
+    flex-direction: row;
+    height: 435px;
+    display: flex;
+    gap: 30px;
 }
 
 .class{
@@ -296,6 +402,14 @@
     height: 40px;
     margin-top: 3px; 
     margin-bottom: 3px;
+}
+
+.content7{
+    height: 426px;
+    background-color: #F5F0E7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .grid-teachers{
@@ -351,3 +465,290 @@
     margin: 0 auto;
   }
 
+  .content8{
+    height: 301px;
+    background-color: #907A7B;
+  }
+
+  .content8 .area{
+    /* align-items: center; */
+    justify-content: center;
+    padding-left: 85px;
+    padding-right: 85px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .content8 .area p{
+    text-align: left;
+    margin: 0 0;
+    font-size: 28px;
+    color: white;
+  }
+    .content8 .area .inputbox{
+        width: 278px;
+        height: 40px;
+        margin: 0 atuo;
+        padding: 0 0 0 0;
+        border-width: 0;
+    }
+    .content8 .area .submit{
+        height: 40px;
+        width: 72px;
+        background-color:#C0A4A5 ;
+        border: 0;
+        margin: 0 0;
+        padding: 0 0 0 0;
+        font-size: 20px;
+        color: white;
+    }
+
+    .content8 .area2{
+        position: relative;
+        height: 159px;
+    }
+
+    .content8 .area2 .left{
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+        gap:  8px;
+        width: 96px;
+        left: 85px;
+        top:0px
+    }
+
+    .content8 .area2 .right{
+        position:absolute;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        top: 0px;
+        right: 85px;
+    }
+
+  @media (max-width: 768px) {
+    .shareParent{
+        visibility: hidden;
+    }
+
+    .topContectBtn{
+        visibility: hidden;
+    }
+
+    .topRight{
+        height: 33px;
+    }
+
+    .topMenu{
+        visibility: hidden;
+    }
+
+    .mobileMenuBtn{
+        visibility: visible;
+        background: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg) no-repeat;
+        background-size: 33px;
+        width: 33px;
+        height: 33px;
+        /* cursor: pointer; */
+        border: none;
+    }
+
+    .mainContent{
+        left: 4%;
+    }
+
+    .mainContentTwoLable{
+        font-size: 28px;
+    }
+    .mainContentThreeLable{
+        width: 345px;
+        font-size: 20px;
+    }
+
+    .gpmlist{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .contentThreeLeftImag{
+        /* border-radius: 0; */
+        display: none;
+    }
+
+    .content3{
+        padding: 64px 15px 64px 15px;
+    }
+    .content3 .right{
+        height: auto;
+    }
+
+    .teacherResume{
+        width: 98%;
+        height: 90px;
+    }
+
+    .teacherResume:hover{
+        width: 98%;
+        margin-left: 0;
+        height: 142px;
+    }
+
+    .teacherResume .teacherResumeRow{
+        padding-left: 16px;
+    }
+
+    .teacherResume:hover .teacherResumeRow{
+        padding-left: 16px;
+    }
+
+    .teacherResume img{
+        width: 48px;
+        height: 48px;
+    }
+
+    .teacherResume:hover img{
+        /* left: 48px; */
+        width: 48px;
+        height: 48px;
+    }
+
+    .content4{
+        flex-direction: column;
+        height: auto ;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .grid-container{
+        display: flex;
+        flex-direction: row;
+        width: 94%;
+        overflow: auto;
+    }
+
+    .grid-item1{
+        grid-row-start: 1;
+        grid-row-end: 1;
+        width: 165px;
+        height: 210px;
+    }
+
+    .grid-item2{
+        width: 165px;
+        height: 210px;
+    }
+    
+    .content5{
+        flex-direction: column;
+        height: auto;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .content5 .area1{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content5 .area1 .content{
+        width: 100%;
+        float: right;
+    }
+
+    .content5 .area2{
+        min-width: 375px;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .content5 .area2 img{
+        width: 165px;
+        height: 165px;
+        border-radius: 16px;
+        object-fit: cover;
+    }
+
+    .content6{
+        height: auto;
+        padding-bottom: 48px;
+    }
+
+    .content6 .area{
+        flex-direction: column;
+        height: auto;
+        display: flex;
+        gap: 30px;
+    }
+
+    .content7{
+        height: auto;
+        padding-bottom: 96px;
+    }
+
+    .grid-teachers{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        /* column-gap: 30px; */
+        row-gap: 8px;
+    }
+
+    .content8{
+        height: 353px;
+    }
+
+    .content8 .area{
+        text-align: left;
+        align-items: left;
+        justify-content: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        /* justify-content: space-between; */
+        height: auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .content8 .area p{
+        font-size: 24px;
+        margin: 0 0;
+    }
+
+    .content8 .area .inputbox{
+        flex: 1;
+        border-radius: 4px 0px 0px 4px;
+    }
+
+    .content8 .area2{
+        height: 180px;
+    }
+
+    .content8 .area .submit{
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    .content8 .area2 .left{
+        left: 15px;
+    }
+
+    .content8 .area2 .right{
+        right: 15px;
+    }
+
+    .content8 .area2 p{
+        left: 15px;
+    }
+  }
+  
