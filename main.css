@@ -328,6 +328,9 @@
 }
 
 .content5 .area2{
+    /* align-items: center; */
+    /* justify-content: center; */
+    display: flex;
     height: 445px;
     width: 50%;
     display: grid;
@@ -662,6 +665,7 @@
     }
 
     .content5 .area2{
+        justify-content: center;
         min-width: 375px;
         height: auto;
         width: 100%;
