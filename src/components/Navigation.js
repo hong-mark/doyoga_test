@@ -24,10 +24,10 @@ function MainNavigation() {
         </ul>
       </nav>
       <div className={classes.topRight}>
-            <button className={classes.topContectBtn} >立即預約</button>
-            <button className={classes.topContectBtn} >聯絡我們</button>
+            <button className={classes.topContectBtn}>立即預約</button>
+            <button className={classes.topContectBtn}>聯絡我們</button>
             <input className={classes.mobileMenuBtn} type="submit" name="" value=""/>
-        </div>
+      </div>
     </header>
   );
 }

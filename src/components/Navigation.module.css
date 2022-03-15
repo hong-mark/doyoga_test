@@ -52,27 +52,31 @@
     /* UI Properties */
     border: 0.5px solid #907A7B;
     border-radius: 16px;
-
     background-color: transparent;
+    display: block;
 }
 .topRight{
+    display: flex;
+    flex-direction: row;
     right: 6.6%;
+    /* display: flex; */
     /* position: absolute; */
 }
 
 .mobileMenuBtn{
-    visibility: hidden;
+    display: none;
 }
 
 @media (max-width: 768px) {
+    nav{
+      visibility: hidden;
+    }
     .topContectBtn{
-        width: 0px;
-        height: 0xp;
-
-        visibility: hidden;
+      display: none;
+        /* visibility: hidden; */
     }
     .mobileMenuBtn{
-        visibility: visible;
+        display: block;
         background: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg) no-repeat;
         background-size: 33px;
         width: 33px;
