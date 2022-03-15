@@ -1,0 +1,151 @@
+
+
+ .main{
+    height: 301px;
+    background-color: #907A7B;
+  }
+
+  .area{
+    /* align-items: center; */
+    justify-content: center;
+    padding-left: 85px;
+    padding-right: 85px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .area p{
+    text-align: left;
+    margin: 0 0;
+    font-size: 28px;
+    color: white;
+  }
+  .area div{
+    display: flex;flex-direction: row; column-gap: 0;row-gap: 0;
+  }
+  .area input{
+        width: 278px;
+        height: 40px;
+        margin: 0 atuo;
+        padding: 0 0 0 0;
+        border-width: 0;
+    }
+    .area button{
+        height: 40px;
+        width: 72px;
+        background-color:#C0A4A5 ;
+        border: 0;
+        margin: 0 0;
+        padding: 0 0 0 0;
+        font-size: 20px;
+        color: white;
+    }
+
+    .area2{
+        position: relative;
+        height: 159px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .area2left{
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+        gap:  8px;
+        width: 96px;
+        left: 85px;
+        top:0px
+    }
+
+    .area2left p{
+        width: 96px; font-size: 16px;color: white;
+        margin: 0 auto;
+    }
+
+    .area2left img{
+        width:96px;height: 31px;
+    }
+
+    .area2right{
+        position:absolute;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        top: 0px;
+        right: 85px;
+    }
+
+    .area2right input{
+        width: 24px;height: 24px;
+    }
+
+    .line{
+        background-color: white; height: 1px;
+    }
+
+    .h33{
+        height: 33px;
+    }
+
+    .cc{
+        position: absolute; bottom: 32px; color: white; font-size: 16px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {    
+        .main{
+            height: 353px;
+        }
+    
+        .area{
+            text-align: left;
+            align-items: left;
+            justify-content: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            /* justify-content: space-between; */
+            height: auto;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    
+       .area p{
+            font-size: 24px;
+            margin: 0 0;
+        }
+    
+        .area input{
+            flex: 1;
+            border-radius: 4px 0px 0px 4px;
+        }
+    
+        .area2{
+            height: 180px;
+        }
+    
+        .area button{
+            border-radius: 0px 4px 4px 0px;
+        }
+    
+        .area2left{
+            left: 15px;
+        }
+    
+        .area2right{
+            right: 15px;
+        }
+    
+        .area2 p{
+            left: 15px;
+        }
+      }
+      
+    

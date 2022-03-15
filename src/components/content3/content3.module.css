@@ -1,0 +1,19 @@
+
+.main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 420px;
+    gap: 30px;
+    padding-bottom: 64px;
+}
+
+
+    @media (max-width: 768px) {
+
+        .main{
+            padding-bottom: 48px;
+            height: auto;
+            flex-direction: column;
+        }
+    }

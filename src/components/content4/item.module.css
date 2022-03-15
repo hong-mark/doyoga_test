@@ -1,0 +1,111 @@
+
+.teacherResume{
+    /* align-items: center; */
+    display: flex;
+    /* 水平置中 */
+    align-items: center; 
+    width: 540px;
+    height: 116px;
+    /* flex-direction: row; */
+    /* position: relative; */
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+    opacity: 1;
+    /* margin: 0 0 0 auto; */
+    transition: all 0.2s linear;
+    /* gap: 20px; */
+}
+
+.teacherResumeRow{
+    padding-left: 32px;
+    display: flex;
+    /* 水平置中 */
+    align-items: center; 
+    flex-direction: row; 
+    gap: 20px;
+}
+
+.teacherResume img{
+    /* position: absolute; */
+    /* left: 32px; */
+    width: 68px;
+    height: 68px;
+    transition: all 0.2s linear;
+    
+}
+
+.teacherResume p{
+    margin: 0 auto;
+}
+
+.summery{
+    display: none;
+    color: #707070;
+    font-size: 16px;
+}
+
+.teacherResume:hover{
+    width: 635px;
+    margin-left: -95px;
+    height: 174px;
+}
+
+.teacherResume:hover .teacherResumeRow{
+    padding-left: 48px;
+}
+
+.teacherResume:hover .summery{
+    display: block;
+}
+
+.teacherResume:hover img{
+    /* left: 48px; */
+    width: 94px;
+    height: 94px;
+}
+
+.p1{
+    color: #707070; font-size: 20px;
+}
+
+.p2{
+    color: #707070; font-size: 16px;
+}
+
+.col{
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+
+    .teacherResume{
+        width: 98%;
+        height: 90px;
+    }
+
+    .teacherResume:hover{
+        width: 98%;
+        margin-left: 0;
+        height: 142px;
+    }
+
+    .teacherResume .teacherResumeRow{
+        padding-left: 16px;
+    }
+
+    .teacherResume:hover .teacherResumeRow{
+        padding-left: 16px;
+    }
+
+    .teacherResume img{
+        width: 48px;
+        height: 48px;
+    }
+
+    .teacherResume:hover img{
+        /* left: 48px; */
+        width: 48px;
+        height: 48px;
+    }
+}

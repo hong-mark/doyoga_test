@@ -1,0 +1,43 @@
+
+.h40{
+    height: 40px;
+}
+
+.h32{
+    height: 32px;
+}
+
+.p1{
+    font-size: 28px; color: #907A7B; margin: 0 auto;
+}
+
+.main{
+    height: 426px;
+    background-color: #F5F0E7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cgrid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 30px;
+    row-gap: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .main{
+        height: auto;
+        padding-bottom: 96px;
+    }
+    
+    .cgrid{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        /* column-gap: 30px; */
+        row-gap: 8px;
+    }
+}
+

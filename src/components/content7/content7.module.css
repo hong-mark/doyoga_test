@@ -1,0 +1,50 @@
+
+.main{
+    height: 709px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.area{
+    flex-direction: row;
+    height: 435px;
+    display: flex;
+    gap: 30px;
+}
+
+.main p{
+    margin: 0 auto;
+}
+
+.p1{
+    font-size: 28px; color: #907A7B;
+}
+
+.p2{
+    font-size: 20px; color: #C0A4A5;
+}
+
+.h32{
+    height: 32px;
+}
+
+.h40{
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+
+    .main{
+        height: auto;
+        padding-bottom: 48px;
+    }
+    
+    .area{
+        flex-direction: column;
+        height: auto;
+        display: flex;
+        gap: 30px;
+    }
+}
+

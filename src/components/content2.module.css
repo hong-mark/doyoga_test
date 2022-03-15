@@ -1,0 +1,27 @@
+
+.main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 148px;
+    flex-direction: column;
+}
+
+.label1{
+    /* font: normal normal medium 28px/42px Source Han Sans TW; */
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 0px;
+    opacity: 1;
+    color: #907A7B;
+    margin: 0 auto;
+}
+.label2{
+    /* font: normal normal medium 28px/42px Source Han Sans TW; */
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0px;
+    opacity: 1;
+    color: #C0A4A5;
+    margin: 0 auto;
+}

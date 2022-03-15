@@ -1,0 +1,125 @@
+
+.backGround{
+    height: 582px;
+    /* UI Properties */
+    background: transparent url('../res/photo-1612157777902-5382bc6e864b.jpeg');
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mainContent{
+    left: 180px;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.shareParent{
+    right: 16px;
+    position: absolute;
+    flex-direction: column;
+    top: 240px;
+    width: 48px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.mainContentOneLable{
+    /* Layout Properties */
+    /* top: 265px; */
+    /* left: 180px; */
+    /* width: 80px; */
+    /* height: 24px; */
+    /* UI Properties */
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    margin: 0 auto;
+}
+.mainContentTwoLable{
+    /* Layout Properties */
+    /* top: 289px; */
+    /* left: 180px; */
+    /* width: 362px; */
+    /* height: 54px; */
+    /* UI Properties */
+    text-align: left;
+    font-size: 36px;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    margin: 0 auto;
+}
+.mainContentThreeLable{
+    /* Layout Properties */
+    /* top: 343px; */
+    /* left: 180px; */
+    width: 445px;
+    height: 72px;
+    /* UI Properties */
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.shareBtn{
+    width: 48px;
+    height: 48px;
+}
+
+.previewBtn{
+    width: 112px;
+    height: 46px;
+    /* UI Properties */
+    /* background: var(--unnamed-color-f5f0e7) 0% 0% no-repeat padding-box; */
+    background: #F5F0E7;
+    border-radius: 5px;
+    border: 0;
+    opacity: 1;
+}
+
+.resumeBtn{
+    width: 112px;
+    height: 46px;
+    /* UI Properties */
+    /* background: var(--unnamed-color-f5f0e7) 0% 0% no-repeat padding-box; */
+    background: #C0A4A5;
+    border: 0;
+    border-radius: 5px;
+    opacity: 1;
+    color: white;
+}
+
+.resumeBtn:hover,
+.resumeBtn:active{
+    color: black;
+}
+
+@media (max-width: 768px) {
+
+    .shareParent{
+        visibility: hidden;
+    }
+
+    .mainContent{
+        left: 4%;
+    }
+
+    .mainContentTwoLable{
+        font-size: 28px;
+    }
+    .mainContentThreeLable{
+        width: 345px;
+        font-size: 20px;
+    }
+}
