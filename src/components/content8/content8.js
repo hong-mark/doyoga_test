@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import style from './content8.module.css'
 import Item from './item';
 
@@ -49,13 +50,35 @@ var datas = [
 ];
 
 function Content8() {
+    const [index, setIndex] = useState(0);
+    const [hasleft, setHasLeft] = useState(false);
+    const [hasright, setHasRight] = useState(datas.length > 3);
+    const [isMobile, setIsMobile] = useState(document.body.clientWidth < 768);
+    window.addEventListener('resize', e => { setIsMobile(document.body.clientWidth < 768)  }, false);
+    if(isMobile)
+        var Itemlist = datas.slice(index * 3, (index +1)*3 );
+    else
+        var Itemlist = datas;
+
+    function nextHandler(){
+        setIndex(index+1);
+        setHasLeft(true);
+        setHasRight((index+2)*3 < datas.length);
+    }
+
+    function previewHandler(){
+        setIndex(index-1);
+        setHasLeft((index-1) !=0);
+        setHasRight(index*3 < datas.length);
+    }
+
     return (
         <div className={style.main}>
             <div className={style.h40}></div>
             <p className={style.p1}>聽聽他們怎麼說</p>
             <div className={style.h32}></div>
             <div className={style.cgrid}>
-                {datas.map((item) => (
+                {Itemlist.map((item) => (
                     <Item
                         key={item.name}
                         name={item.name}
@@ -64,6 +87,10 @@ function Content8() {
                         star={item.star}
                     />
                 ))}
+            </div>
+            <div className={style.nextandpre} style={{display: isMobile ?"" :"none"}}>
+                <input className={style.Btn} type='button' value='←' disabled={hasleft ? "" : "disable"} onClick = {previewHandler}/>
+                <input className={style.Btn} type='button' value='→'  disabled={hasright ? "" : "disable"}  onClick = {nextHandler}/>
             </div>
         </div>
     );

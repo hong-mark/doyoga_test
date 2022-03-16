@@ -11,7 +11,7 @@ function Content6(){
                     <p className={style.p1}>精心設計、課程多元</p>
                     <p className={style.p2}>教師帶領多元課程，釋放壓力，與身心常見的緊繃不適溫柔和解。</p>
                     <div className={style.h24}></div>
-                    <p className={style.p3}>課程介紹</p>
+                    <p className={style.p3}>課程介紹 →</p>
                 </div>
             </div>
             <div className={style.area2}>

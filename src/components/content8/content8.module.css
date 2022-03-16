@@ -26,11 +26,37 @@
     row-gap: 16px;
 }
 
+.Btn{
+    /* UI Properties */
+    /* background: var(--unnamed-color-f5f0e7) 0% 0% no-repeat padding-box; */
+    background: transparent;
+    border-radius: 5px;
+    border: 0;
+    font-size: 50px;
+    color: #907A7B;
+}
+
+.nextandpre{
+    width: 345px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.Btn:active{
+    color: white;
+}
+
+.Btn:disabled{
+    color: #C0A4A5;
+}
+
 @media (max-width: 768px) {
 
     .main{
         height: auto;
-        padding-bottom: 96px;
+        padding-bottom: 56px;
     }
     
     .cgrid{

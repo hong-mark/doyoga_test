@@ -3,7 +3,7 @@
     height: 582px;
     /* UI Properties */
     background: transparent url('../res/photo-1612157777902-5382bc6e864b.jpeg');
-    /* background-size: cover; */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
     margin: 0 auto;
