@@ -12,7 +12,7 @@ function Item(pros){
                 <div className={style.h8}></div>
                 <p className={style.p3}>{pros.content}</p>
                 <div className={style.h40}></div>
-                <button type="button">選擇課程</button>
+                <button type="button" onClick={()=>pros.handle(pros.index)}>選擇課程</button>
             </div>
         </div>
     );

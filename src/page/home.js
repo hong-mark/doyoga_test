@@ -8,12 +8,10 @@ import Content6 from "../components/content6";
 import Content7 from "../components/content7/content7";
 import Content8 from "../components/content8/content8";
 import Content9 from "../components/content9";
-import MainNavigation from "../components/Navigation";
   
 function HomePage(){
     return (
     <div>
-      <MainNavigation />
       <Content1 />
       <Content2 />
       <Content3 />

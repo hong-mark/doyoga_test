@@ -1,0 +1,232 @@
+
+import style from './content72.module.css'
+import style2 from './content72.step2.module.css'
+import style3 from './content72.step3.module.css'
+import img1 from '../../res/woman in white tank top and white leggings bending her body.jpg'
+import img2 from '../../res/woman performing yoga.jpg'
+import img3 from '../../res/woman in blue leggings and black tank top doing yoga.jpg'
+import rightpng from '../../res/right.png'
+import Item from './item'
+import { useState } from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+import {Link} from 'react-router-dom';
+import {
+    formatDate,
+    parseDate,
+  } from 'react-day-picker/moment';
+
+var datas = [
+    {
+        title:"首次體驗",
+        content:"分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。",
+        money:"＄450 / 次",
+        image:img1
+    },
+    {
+        title:"短期體驗",
+        content:"分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。",
+        money:"＄1800 / 月",
+        image:img2
+    },
+    {
+        title:"長期體驗",
+        content:"分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。",
+        money:"＄5600 / 季",
+        image:img3
+    },
+];
+
+const Step1 = (props) => {
+    if(props.disabled)
+        return null;
+
+    return (
+      <div className={style.center}>
+            <div className={style.area}>
+                {datas.map((item,_index)=>(
+                    <Item 
+                        key={item.title}
+                        index={_index}
+                        title={item.title}
+                        content={item.content}
+                        image={item.image}
+                        money={item.money}
+                        handle={props.handle}
+                    />
+                ))}
+            </div>
+            <div className={style.h32}></div>
+            <p className={style.p1}>立即預約</p>
+            <div className={style.h16}></div>
+            <p className={style.p2}>1. 如果有特殊體質、特殊狀況，請主動告知。</p>
+            <p className={style.p2}>2. 取消預約或時間異動請於預約日前一天晚間 21:00 前告知，預約當日請勿異動或取消，以免影響您日後再預約的個人信用及難度。</p>
+            <p className={style.p2}>3. 為維護上課品質，請遵守 DOYOGA 各項參觀規定，未遵守規定者，本公司保留謝絕入館之權利。</p>
+            <p className={style.p2}>4. DOYOGA 保留修改預約須知之權利，修改後的條款將公佈於本網站上，不另外個別通知。如果您繼續在本網站進行參觀預約，就表示您已經了解、並同意遵守修改後的約定條款。</p>
+      </div>
+    )
+}
+
+function MyDayPickerInput() {
+    const FORMAT = 'MM/DD/YYYY';
+    return <DayPickerInput 
+            inputProps={{ style: { width: 118,height:36,"padding-left":10,border: "1px solid #c0a4a5","border-radius": 4,"font-size":16,color:"#c0a4a5" } }}
+            formatDate={formatDate}
+            parseDate={parseDate}
+            format={FORMAT}
+            placeholder={FORMAT}
+            />;
+}
+
+const Step2= (props) => {
+
+    const [selectedDate, handleDateChange] = useState(new Date());
+
+
+    if(props.disabled)
+        return null;
+    
+    return (
+      <div className={style2.center}>
+           <div className={style2.row}>
+               <p className={style2.p1} >您選擇的是</p>
+               <p className={style2.p2} >首次體驗課程-基礎</p>
+           </div>
+           <div className={style2.col}>
+                <p className={style2.p1}>1. 是否接觸過瑜珈?</p>
+                <div className={style2.h16}></div>
+                <div className={style2.rownogap}>
+                    <input type="radio" name="an1" value="1"/><label className={style2.p1}>是</label>
+                    <div className={style2.w32}></div>
+                    <input type="radio" name="an1" value="2" /><label className={style2.p1}>否</label>
+                </div>
+                <div className={style2.h32}></div>
+               <p className={style2.p1}>2. 想改善的生活問題?</p>
+               <div className={style2.h16}></div>
+               <div className={style2.grid32}>
+                    <duv><input type="checkbox" value="an21"/><label className={style2.p1}>肌耐力不足</label></duv>
+                    <duv><input type="checkbox" value="an22"/><label className={style2.p1}>柔軟度不佳</label></duv>
+                    <duv><input type="checkbox" value="an23"/><label className={style2.p1}>壓力大</label></duv>
+                    <duv><input type="checkbox" value="an24"/><label className={style2.p1}>姿勢不正</label></duv>
+                    <duv><input type="checkbox" value="an25"/><label className={style2.p1}>睡眠品質差</label></duv>
+                    <duv><input type="checkbox" value="an26"/><label className={style2.p1}>注意力不足</label></duv>
+               </div>
+               <div className={style2.h32}></div>
+               <p className={style2.p1}>3. 每週累積運動量約為多少？</p>
+               <div className={style2.h16}></div>
+               <div className={style2.grid22}>
+                    <duv><input type="radio" name="an3" value="1" /><label className={style2.p1}>150 分鐘以上</label></duv>
+                    <duv><input type="radio" name="an3" value="2" /><label className={style2.p1}>75~150 分鐘</label></duv>
+                    <duv><input type="radio" name="an3" value="3" /><label className={style2.p1}>30~75 分鐘</label></duv>
+                    <duv><input type="radio" name="an3" value="4" /><label className={style2.p1}>30 分鐘以下</label></duv>
+               </div>
+               <div className={style2.h32}></div>
+               <p className={style2.p1}>4. 上課預約報到日</p>
+               <p className={style2.p3}>若還沒有確定的日期，可以等待專員與您聯絡時再做詳細的諮詢哦！</p>
+               <div className={style2.h16}></div>
+               <div><MyDayPickerInput /></div>
+               <div className={style2.h32}></div>
+               <p className={style2.p1}>5. 填寫基本資料，完成預約後會寄送通知至電子信箱</p>
+               <div className={style2.h16}></div>
+               <div className={style2.grid22} style={{"column-gap": "8px"}}>
+                    <label className={style2.p1}>姓名</label>
+                    <label className={style2.p1}>年齡</label>
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的姓名' />
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的年齡' />
+               </div>
+               <div className={style2.h16}></div>
+               <p className={style2.p1}>性別</p>
+               <div className={style2.h8}></div>
+               <select className={style2.custom_select}>
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+                <div className={style2.h16}></div>
+                <p className={style2.p1}>電子信箱</p>
+                <div className={style2.h8}></div>
+                <input className={style2.inputField}  type="text" placeholder='email@example.com' style={{width:"100%"}} />
+                <div className={style2.h16}></div>
+                <p className={style2.p1}>手機號碼</p>
+                <div className={style2.h8}></div>
+                <input className={style2.inputField}  type="text" placeholder='0912-345-678' style={{width:"100%"}} />
+                <div className={style2.h32}></div>
+                <input className={style2.custom_btn} type="button" value="送出" onClick={props.handle}></input>
+           </div>
+      </div>
+    )
+}
+
+const Step3 = (props) => {
+    if(props.disabled)
+        return null;
+
+    return (
+      <div className={style3.center}>
+          <img className={style3.rightimg} src={rightpng}></img>
+          <div className={style3.h20}></div>
+          <label className={style3.p2}>已完成預約，以下是您的預約資訊:</label>
+          <div className={style3.h32}></div>
+          <div className={style3.infoarea}>
+              <div className={style3.infotitle}>
+                  <label className={style3.p_title}>預約資訊</label>
+                  <label className={style3.p_title}>⌵</label>
+              </div>
+              <div className={style3.info_content}>
+                    <div className={style3.info_classname}>
+                            <label className={style3.p1}>您預約的是</label>
+                            <label className={style3.p4}> 首次體驗課程-基礎</label>
+                    </div>
+                    <div className={style3.h16}></div>
+                    <div className={style3.info_content_data}>
+                        <label className={style3.p1}>上課預約報到日：2021/07/21</label>
+                        <label className={style3.p1}>預約人：Joanne Chen</label>
+                        <label className={style3.p1}>年齡：18 歲</label>
+                        <label className={style3.p1}>性別：女</label>
+                        <label className={style3.p1}>電子信箱：example123@gmail.com</label>
+                        <label className={style3.p1}>手機號碼：0912-345-678</label>
+                    </div>
+              </div>
+
+          </div>
+          <div className={style3.h24}></div>
+          <label className={style3.p2}>上課注意事項</label>
+          <div className={style3.h8}></div>
+          <label className={style3.pnotion}>第一次上課請提前 10-15 分鐘至櫃檯報到，請攜帶毛巾、水 .穿著運動服、乾淨室內運動鞋。 如欲更改體驗時間請提前通知我們喔！</label>
+          <div className={style3.h32}></div>
+          <Link to="/">
+            <input className={style3.custom_btn} type="button" value="返回首頁"></input>
+          </Link>
+      </div>
+    )
+}
+
+function Content72(){
+    const [index, setIndex] = useState(0);
+    const [classesIndex, setClassesIndex] = useState(-1);
+
+    function nextStepHandler(classes){
+        setIndex(index+1);
+        setClassesIndex(classesIndex);
+    }
+
+    function backHome(){
+        window.history.forward();
+    }
+
+    return(
+        <div className={style.main}>
+            <p className={style.p1}>立即預約</p>
+            <div className={style.pagearea}>
+                <p className={ [style.pagebarpoint , index == 0 ? style.pagebarpointactive : style.pagebarpointdisable].join(" ")} >選擇方案</p>
+                <p className={[style.pagebarpoint , index == 1 ? style.pagebarpointactive : style.pagebarpointdisable].join(" ")} >填寫資料</p>
+                <p className={[style.pagebarpoint , index == 2 ? style.pagebarpointactive : style.pagebarpointdisable].join(" ")} >完成預約</p>
+            </div>
+
+            <Step1 disabled={index == 0 ? "" : "disable"} handle={nextStepHandler}/>
+            <Step2 disabled={index == 1 ? "" : "disable"} handle={nextStepHandler}/>
+            <Step3 disabled={index == 2 ? "" : "disable"} handle={backHome}/>
+        </div>
+    );
+}
+
+export default Content72;
