@@ -67,24 +67,49 @@ const Step1 = (props) => {
     )
 }
 
-function MyDayPickerInput() {
+function MyDayPickerInput(props) {
     const FORMAT = 'MM/DD/YYYY';
     return <DayPickerInput 
-            inputProps={{ style: { width: 118,height:36,"padding-left":10,border: "1px solid #c0a4a5","border-radius": 4,"font-size":16,color:"#c0a4a5" } }}
+            inputProps={{ style: { width: 118,height:36,"paddingLeft":10,border: "1px solid #c0a4a5","borderRadius": 4,"fontSize":16,color:"#c0a4a5" } }}
             formatDate={formatDate}
             parseDate={parseDate}
             format={FORMAT}
             placeholder={FORMAT}
+            onDayChange={props.handle}
             />;
 }
 
 const Step2= (props) => {
 
     const [selectedDate, handleDateChange] = useState(new Date());
-
-
+    const [usedYoga, handleusedYogaChange] = useState();
+    const [quations, handleQuations] = useState([]);
+    const [time, handleTimeChange] = useState();
+    const [name, handleNameChange] = useState();
+    const [year, handleYearChange] = useState();
+    const [gender, handleGenderChange] = useState("男");
+    const [mail, handleEmailChange] = useState();
+    const [phone, handlePhoneChange] = useState();
+    
     if(props.disabled)
         return null;
+
+    function handleQuationsChange(e) {
+        const key = e.target.value;
+        if(quations.includes(key)){
+            const indexOfValue = quations.indexOf(key);
+    
+            if (indexOfValue >= 0) {
+                quations.splice(indexOfValue, 1);
+            }
+        }else
+            quations.push(key);
+
+        handleQuations(quations);
+      };
+
+      function test() {
+      };
     
     return (
       <div className={style2.center}>
@@ -96,61 +121,61 @@ const Step2= (props) => {
                 <p className={style2.p1}>1. 是否接觸過瑜珈?</p>
                 <div className={style2.h16}></div>
                 <div className={style2.rownogap}>
-                    <input type="radio" name="an1" value="1"/><label className={style2.p1}>是</label>
+                    <input type="radio" name="an1" value="1" onChange={(e)=>handleusedYogaChange(e.target.value)}/><label className={style2.p1}>是</label>
                     <div className={style2.w32}></div>
-                    <input type="radio" name="an1" value="2" /><label className={style2.p1}>否</label>
+                    <input type="radio" name="an1" value="2" onChange={(e)=>handleusedYogaChange(e.target.value)}/><label className={style2.p1}>否</label>
                 </div>
                 <div className={style2.h32}></div>
                <p className={style2.p1}>2. 想改善的生活問題?</p>
                <div className={style2.h16}></div>
                <div className={style2.grid32}>
-                    <duv><input type="checkbox" value="an21"/><label className={style2.p1}>肌耐力不足</label></duv>
-                    <duv><input type="checkbox" value="an22"/><label className={style2.p1}>柔軟度不佳</label></duv>
-                    <duv><input type="checkbox" value="an23"/><label className={style2.p1}>壓力大</label></duv>
-                    <duv><input type="checkbox" value="an24"/><label className={style2.p1}>姿勢不正</label></duv>
-                    <duv><input type="checkbox" value="an25"/><label className={style2.p1}>睡眠品質差</label></duv>
-                    <duv><input type="checkbox" value="an26"/><label className={style2.p1}>注意力不足</label></duv>
+                    <div><input type="checkbox" value="an21" onChange={handleQuationsChange}/><label className={style2.p1}>肌耐力不足</label></div>
+                    <div><input type="checkbox" value="an22" onChange={handleQuationsChange}/><label className={style2.p1}>柔軟度不佳</label></div>
+                    <div><input type="checkbox" value="an23" onChange={handleQuationsChange}/><label className={style2.p1}>壓力大</label></div>
+                    <div><input type="checkbox" value="an24" onChange={handleQuationsChange}/><label className={style2.p1}>姿勢不正</label></div>
+                    <div><input type="checkbox" value="an25" onChange={handleQuationsChange}/><label className={style2.p1}>睡眠品質差</label></div>
+                    <div><input type="checkbox" value="an26" onChange={handleQuationsChange}/><label className={style2.p1}>注意力不足</label></div>
                </div>
                <div className={style2.h32}></div>
                <p className={style2.p1}>3. 每週累積運動量約為多少？</p>
                <div className={style2.h16}></div>
                <div className={style2.grid22}>
-                    <duv><input type="radio" name="an3" value="1" /><label className={style2.p1}>150 分鐘以上</label></duv>
-                    <duv><input type="radio" name="an3" value="2" /><label className={style2.p1}>75~150 分鐘</label></duv>
-                    <duv><input type="radio" name="an3" value="3" /><label className={style2.p1}>30~75 分鐘</label></duv>
-                    <duv><input type="radio" name="an3" value="4" /><label className={style2.p1}>30 分鐘以下</label></duv>
+                    <div><input type="radio" name="an3" value="1" onChange={handleTimeChange}/><label className={style2.p1}>150 分鐘以上</label></div>
+                    <div><input type="radio" name="an3" value="2" onChange={handleTimeChange}/><label className={style2.p1}>75~150 分鐘</label></div>
+                    <div><input type="radio" name="an3" value="3" onChange={handleTimeChange}/><label className={style2.p1}>30~75 分鐘</label></div>
+                    <div><input type="radio" name="an3" value="4" onChange={handleTimeChange}/><label className={style2.p1}>30 分鐘以下</label></div>
                </div>
                <div className={style2.h32}></div>
                <p className={style2.p1}>4. 上課預約報到日</p>
                <p className={style2.p3}>若還沒有確定的日期，可以等待專員與您聯絡時再做詳細的諮詢哦！</p>
                <div className={style2.h16}></div>
-               <div><MyDayPickerInput /></div>
+               <div><MyDayPickerInput handle={handleDateChange}/></div>
                <div className={style2.h32}></div>
                <p className={style2.p1}>5. 填寫基本資料，完成預約後會寄送通知至電子信箱</p>
                <div className={style2.h16}></div>
-               <div className={style2.grid22} style={{"column-gap": "8px"}}>
+               <div className={style2.grid22} style={{"columnGap": "8px"}}>
                     <label className={style2.p1}>姓名</label>
                     <label className={style2.p1}>年齡</label>
-                    <input className={style2.inputField}  type="text" placeholder='請輸入您的姓名' />
-                    <input className={style2.inputField}  type="text" placeholder='請輸入您的年齡' />
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的姓名' onChange={handleNameChange}/>
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的年齡' onChange={handleYearChange}/>
                </div>
                <div className={style2.h16}></div>
                <p className={style2.p1}>性別</p>
                <div className={style2.h8}></div>
-               <select className={style2.custom_select}>
+               <select className={style2.custom_select} onChange={handleGenderChange}>
                     <option>男</option>
                     <option>女</option>
                 </select>
                 <div className={style2.h16}></div>
                 <p className={style2.p1}>電子信箱</p>
                 <div className={style2.h8}></div>
-                <input className={style2.inputField}  type="text" placeholder='email@example.com' style={{width:"100%"}} />
+                <input className={style2.inputField}  type="text" placeholder='email@example.com' style={{width:"100%"}} onChange={handleEmailChange}/>
                 <div className={style2.h16}></div>
                 <p className={style2.p1}>手機號碼</p>
                 <div className={style2.h8}></div>
-                <input className={style2.inputField}  type="text" placeholder='0912-345-678' style={{width:"100%"}} />
+                <input className={style2.inputField}  type="text" placeholder='0912-345-678' style={{width:"100%"}} onChange={handlePhoneChange}/>
                 <div className={style2.h32}></div>
-                <input className={style2.custom_btn} type="button" value="送出" onClick={props.handle}></input>
+                <input className={style2.custom_btn} type="button" value="送出" onClick={(test)}></input>
            </div>
       </div>
     )
