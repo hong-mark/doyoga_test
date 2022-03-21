@@ -16,7 +16,7 @@ import {
     parseDate,
   } from 'react-day-picker/moment';
 
-var datas = [
+const datas = [
     {
         title:"首次體驗",
         content:"分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。",
@@ -125,24 +125,24 @@ const Step2= (props) => {
             return;
 
         fetch("https://motoretag.taichung.gov.tw/DataAPI/api/ParkingSpotListAPI")
-        .then(res=>res.json)
-        .then(
-            (result)=>{
-                sessionStorage.setItem('yoga', usedYoga);
-                sessionStorage.setItem('quations', quations.toString());
-                sessionStorage.setItem('time', time);
-                sessionStorage.setItem('name', name);
-                sessionStorage.setItem('year', year);
-                sessionStorage.setItem('gender', gender);
-                sessionStorage.setItem('mail', mail);
-                sessionStorage.setItem('phone', phone);
-                sessionStorage.setItem('date', selectedDate.toISOString());
-                props.handle();
-            },
-            (error)=>{
-                
-            }
-        );
+            .then(res=>res.json)
+            .then(
+                (result)=>{
+                    sessionStorage.setItem('yoga', usedYoga);
+                    sessionStorage.setItem('quations', quations.toString());
+                    sessionStorage.setItem('time', time);
+                    sessionStorage.setItem('name', name);
+                    sessionStorage.setItem('year', year);
+                    sessionStorage.setItem('gender', gender);
+                    sessionStorage.setItem('mail', mail);
+                    sessionStorage.setItem('phone', phone);
+                    sessionStorage.setItem('date', selectedDate.toISOString());
+                    props.handle();
+                },
+                (error)=>{
+                    
+                }
+            );
       };
     
     return (
