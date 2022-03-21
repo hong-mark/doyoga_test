@@ -108,7 +108,41 @@ const Step2= (props) => {
         handleQuations(quations);
       };
 
-      function test() {
+      function sendReserveHandler() {
+        console.log(usedYoga);
+        console.log(quations);
+        console.log(time);
+        console.log(name);
+        console.log(year);
+        console.log(gender);
+        console.log(mail);
+        console.log(phone);
+        console.log(selectedDate);
+        if(usedYoga == null || quations == null 
+            || time == null || name == null || year == null 
+            || mail == null || phone == null 
+            || selectedDate == null)
+            return;
+
+        fetch("https://motoretag.taichung.gov.tw/DataAPI/api/ParkingSpotListAPI")
+        .then(res=>res.json)
+        .then(
+            (result)=>{
+                sessionStorage.setItem('yoga', usedYoga);
+                sessionStorage.setItem('quations', quations.toString());
+                sessionStorage.setItem('time', time);
+                sessionStorage.setItem('name', name);
+                sessionStorage.setItem('year', year);
+                sessionStorage.setItem('gender', gender);
+                sessionStorage.setItem('mail', mail);
+                sessionStorage.setItem('phone', phone);
+                sessionStorage.setItem('date', selectedDate.toISOString());
+                props.handle();
+            },
+            (error)=>{
+                
+            }
+        );
       };
     
     return (
@@ -140,10 +174,10 @@ const Step2= (props) => {
                <p className={style2.p1}>3. 每週累積運動量約為多少？</p>
                <div className={style2.h16}></div>
                <div className={style2.grid22}>
-                    <div><input type="radio" name="an3" value="1" onChange={handleTimeChange}/><label className={style2.p1}>150 分鐘以上</label></div>
-                    <div><input type="radio" name="an3" value="2" onChange={handleTimeChange}/><label className={style2.p1}>75~150 分鐘</label></div>
-                    <div><input type="radio" name="an3" value="3" onChange={handleTimeChange}/><label className={style2.p1}>30~75 分鐘</label></div>
-                    <div><input type="radio" name="an3" value="4" onChange={handleTimeChange}/><label className={style2.p1}>30 分鐘以下</label></div>
+                    <div><input type="radio" name="an3" value="1" onChange={(e)=>handleTimeChange(e.target.value)}/><label className={style2.p1}>150 分鐘以上</label></div>
+                    <div><input type="radio" name="an3" value="2" onChange={(e)=>handleTimeChange(e.target.value)}/><label className={style2.p1}>75~150 分鐘</label></div>
+                    <div><input type="radio" name="an3" value="3" onChange={(e)=>handleTimeChange(e.target.value)}/><label className={style2.p1}>30~75 分鐘</label></div>
+                    <div><input type="radio" name="an3" value="4" onChange={(e)=>handleTimeChange(e.target.value)}/><label className={style2.p1}>30 分鐘以下</label></div>
                </div>
                <div className={style2.h32}></div>
                <p className={style2.p1}>4. 上課預約報到日</p>
@@ -156,26 +190,26 @@ const Step2= (props) => {
                <div className={style2.grid22} style={{"columnGap": "8px"}}>
                     <label className={style2.p1}>姓名</label>
                     <label className={style2.p1}>年齡</label>
-                    <input className={style2.inputField}  type="text" placeholder='請輸入您的姓名' onChange={handleNameChange}/>
-                    <input className={style2.inputField}  type="text" placeholder='請輸入您的年齡' onChange={handleYearChange}/>
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的姓名' onChange={(e)=>handleNameChange(e.target.value)}/>
+                    <input className={style2.inputField}  type="text" placeholder='請輸入您的年齡' onChange={(e)=>handleYearChange(e.target.value)}/>
                </div>
                <div className={style2.h16}></div>
                <p className={style2.p1}>性別</p>
                <div className={style2.h8}></div>
-               <select className={style2.custom_select} onChange={handleGenderChange}>
+               <select className={style2.custom_select} onChange={(e)=>handleGenderChange(e.target.value)}>
                     <option>男</option>
                     <option>女</option>
                 </select>
                 <div className={style2.h16}></div>
                 <p className={style2.p1}>電子信箱</p>
                 <div className={style2.h8}></div>
-                <input className={style2.inputField}  type="text" placeholder='email@example.com' style={{width:"100%"}} onChange={handleEmailChange}/>
+                <input className={style2.inputField}  type="text" placeholder='email@example.com' style={{width:"100%"}} onChange={(e)=>handleEmailChange(e.target.value)}/>
                 <div className={style2.h16}></div>
                 <p className={style2.p1}>手機號碼</p>
                 <div className={style2.h8}></div>
-                <input className={style2.inputField}  type="text" placeholder='0912-345-678' style={{width:"100%"}} onChange={handlePhoneChange}/>
+                <input className={style2.inputField}  type="text" placeholder='0912-345-678' style={{width:"100%"}} onChange={(e)=>handlePhoneChange(e.target.value)}/>
                 <div className={style2.h32}></div>
-                <input className={style2.custom_btn} type="button" value="送出" onClick={(test)}></input>
+                <input className={style2.custom_btn} type="button" value="送出" onClick={(sendReserveHandler)}></input>
            </div>
       </div>
     )
@@ -199,16 +233,16 @@ const Step3 = (props) => {
               <div className={style3.info_content}>
                     <div className={style3.info_classname}>
                             <label className={style3.p1}>您預約的是</label>
-                            <label className={style3.p4}> 首次體驗課程-基礎</label>
+                            <label className={style3.p4}> {datas[sessionStorage.getItem('classindex')].title}-基礎</label>
                     </div>
                     <div className={style3.h16}></div>
                     <div className={style3.info_content_data}>
-                        <label className={style3.p1}>上課預約報到日：2021/07/21</label>
-                        <label className={style3.p1}>預約人：Joanne Chen</label>
-                        <label className={style3.p1}>年齡：18 歲</label>
-                        <label className={style3.p1}>性別：女</label>
-                        <label className={style3.p1}>電子信箱：example123@gmail.com</label>
-                        <label className={style3.p1}>手機號碼：0912-345-678</label>
+                        <label className={style3.p1}>上課預約報到日：{sessionStorage.getItem('date').split('T')[0]}</label>
+                        <label className={style3.p1}>預約人：{sessionStorage.getItem('name')}</label>
+                        <label className={style3.p1}>年齡：{sessionStorage.getItem('year')} 歲</label>
+                        <label className={style3.p1}>性別：{sessionStorage.getItem('gender')}</label>
+                        <label className={style3.p1}>電子信箱：{sessionStorage.getItem('mail')}</label>
+                        <label className={style3.p1}>手機號碼：{sessionStorage.getItem('phone')}</label>
                     </div>
               </div>
 
@@ -227,11 +261,13 @@ const Step3 = (props) => {
 
 function Content72(){
     const [index, setIndex] = useState(0);
-    const [classesIndex, setClassesIndex] = useState(-1);
+
+
 
     function nextStepHandler(classes){
         setIndex(index+1);
-        setClassesIndex(classesIndex);
+        if(classes != null)
+            sessionStorage.setItem('classindex',classes);
     }
 
     function backHome(){

@@ -116,6 +116,14 @@
     font-size: 20px;
 }
 
+.custom_btn:hover{
+    background-color: #C0A4A577;
+}
+
+.custom_btn:active{
+    padding: 3px;
+}
+
 .daypicker{
     width: 118px;
     height: 36px;
