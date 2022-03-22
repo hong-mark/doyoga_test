@@ -1,0 +1,40 @@
+
+.inputField{
+    width: 171px;
+    height: 36px;
+    display: inline-block;
+    border: 1px solid #c0a4a5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* outline-color: #c0a4a5; */
+    padding-left: 10px;
+    font-size: 16px;
+    color: #c0a4a5;
+}
+
+.custom_btn{
+    width: 171px;
+    height: 46px;
+    background-color: #c0a4a5;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.custom_btn:hover{
+    background-color: #C0A4A577;
+}
+
+.custom_btn:active{
+    padding: 3px;
+}
+
+.main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
+}

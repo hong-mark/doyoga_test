@@ -109,15 +109,6 @@ const Step2= (props) => {
       };
 
       function sendReserveHandler() {
-        console.log(usedYoga);
-        console.log(quations);
-        console.log(time);
-        console.log(name);
-        console.log(year);
-        console.log(gender);
-        console.log(mail);
-        console.log(phone);
-        console.log(selectedDate);
         if(usedYoga == null || quations == null 
             || time == null || name == null || year == null 
             || mail == null || phone == null 

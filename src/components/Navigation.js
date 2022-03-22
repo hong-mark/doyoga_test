@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 import classes from "./Navigation.module.css";
 
 import logo from "../res/DOYOGA-logo.png";
+import { useNavigate } from "react-router-dom";
 
 function MainNavigation() {
+  let navigate = useNavigate();
 
   function toReServePage(){
-    window.location.href = './reserve'
+    navigate("/reserve");
+  }
+
+  function toCheckPage(){
+    navigate("/search");
   }
 
   return (
@@ -30,7 +36,7 @@ function MainNavigation() {
       </nav>
       <div className={classes.topRight}>
             <button className={classes.topContectBtn} onClick={toReServePage}>立即預約</button>
-            <button className={classes.topContectBtn}>聯絡我們</button>
+            <button className={classes.topContectBtn} onClick={toCheckPage}>聯絡我們</button>
             <input className={classes.mobileMenuBtn} type="submit" name="" value=""/>
       </div>
     </header>
